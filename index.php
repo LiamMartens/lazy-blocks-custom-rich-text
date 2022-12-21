@@ -3,7 +3,7 @@
  * Plugin Name:  Lazy Blocks: Custom Rich Text
  * Description:  Adds custom rich text editor
  * Plugin URI:   https://github.com/LiamMartens/lazy-blocks-custom-rich-text
- * Version:      1.0.0
+ * Version:      1.0.1
  * Author:       Liam Martens
  * Author URI:   https://liammartens.com
  * License:      MIT
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
   exit;
 }
 
-add_action('admin_init', function() {
+add_action('init', function() {
   if (!class_exists('LazyBlocks')) {
     return;
   }

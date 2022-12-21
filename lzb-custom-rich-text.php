@@ -3,6 +3,10 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit;
 }
 
+if (!defined('LZB_CUSTOM_RICH_TEXT_VERSION')) {
+  define('LZB_CUSTOM_RICH_TEXT_VERSION', '1.0.1');
+}
+
 /**
  * LazyBlocks_Control_CustomRichText class.
  */
@@ -32,14 +36,14 @@ class LazyBlocks_Control_CustomRichText extends LazyBlocks_Control {
       'lzb-custom-rich-text-css',
       plugin_dir_url(__FILE__) . './dist/script.css',
       [],
-      '1.0.0'
+      LZB_CUSTOM_RICH_TEXT_VERSION
     );
 
     wp_register_script(
-      'lzb-custom-rich-text-js',
+      'lzb-custom-rich-text',
       plugin_dir_url(__FILE__) . './dist/script.js',
       ['wp-blocks', 'wp-i18n', 'wp-element', 'wp-components'],
-      '1.0.0',
+      LZB_CUSTOM_RICH_TEXT_VERSION,
       true
     );
   }
@@ -50,7 +54,7 @@ class LazyBlocks_Control_CustomRichText extends LazyBlocks_Control {
    * @return array script dependencies.
    */
   public function get_script_depends() {
-    return ['lzb-custom-rich-text-js'];
+    return ['lzb-custom-rich-text'];
   }
 
   /**
